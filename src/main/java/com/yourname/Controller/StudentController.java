@@ -9,6 +9,15 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Collection;
 
 /**
+ * Handles the requests for data. Some examples below.
+ *
+ * http://localhost:8080/students
+ * http://localhost:8080/students/id/3
+ *
+ * The following would return all the students that fit the search.
+ * http://localhost:8080/students/name/George
+ * http://localhost:8080/students/course/Computer Science
+ *
  * Created by David on 2/27/2017.
  */
 @RestController
@@ -30,9 +39,19 @@ public class StudentController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
     public Student getStudentById(@PathVariable("id") int id) {
         return studentService.getStudentById(id);
+    }
+
+    @RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
+    public Collection<Student> getStudentsByName(@PathVariable("name") String name) {
+        return studentService.getStudentsByName(name);
+    }
+
+    @RequestMapping(value = "/course/{course}", method = RequestMethod.GET)
+    public Collection<Student> getStudentsByCourse(@PathVariable("course") String name) {
+        return studentService.getStudentsByCourse(name);
     }
 
     /**
