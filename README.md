@@ -20,6 +20,7 @@ I also included a development and production configuration, which use a differen
  http://localhost:8080/students/id/3
  
  The following would return all the students that fit the search.
+ 
  http://localhost:8080/students/name/George
  
  http://localhost:8080/students/course/Computer Science   
