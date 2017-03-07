@@ -8,10 +8,12 @@ I also included a development and production configuration, which use a differen
 
 ## Class Summary
 **Student**
+
   Just a container for all the properties of a Student.
 	
 **StudentController**
-	Handles the requests for data. Some examples below.
+
+ Handles the requests for data. Some examples below.
  
  http://localhost:8080/students
  http://localhost:8080/students/id/3
@@ -21,14 +23,18 @@ I also included a development and production configuration, which use a differen
  http://localhost:8080/students/course/Computer Science   
 
 **StudentDao**
-  An interface to be used with your choice of data storage/access.
-  ex. MonogoDB, MySQL, or local data.
+
+An interface to be used with your choice of data storage/access.
+ex. MonogoDB, MySQL, or local data.
   
 **FakeStudentDataImpl**
-	Extends StudentDao, contains local data for students stored in a HashMap.
+
+Extends StudentDao, contains local data for students stored in a HashMap.
   
 **MySqlStudentDataImpl**
-	Extends StudentDao, can access any MySQL database with a table named "students".
+
+Extends StudentDao, can access any MySQL database with a table named "students".
   
 **StudentService**
-	Business logic.
+
+Business logic.
